@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-    // traccia esercizio 
+    // ?traccia esercizio 
     /*
     Creare una variabile con un paragrafo di testo a vostra scelta.
 Stampare a schermo il paragrafo e la sua lunghezza.
@@ -18,14 +18,29 @@ Stampare di nuovo il paragrafo e la sua lunghezza, dopo aver sostituito con tre 
      */ 
 
 
-    //  creazione variabile con paragrafo di testo
+    // creazione variabile con paragrafo di testo
     $text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, numquam. Alias in quasi voluptate, perferendis facilis praesentium nemo sit odit aliquam iure dolorem numquam illo ducimus a at laboriosam possimus!';
-
+    
+    // variabile contenente porzione da modificare
+    $modified = $_GET["censura"];
+    
+    // stringa modificata
+    $censuredText = str_replace($modified,'***',$text); 
     ?>
+
+
+
     <!-- stampa variabile -->
     <p>
         <?php echo strlen($text); 
         echo $text; ?>
+    </p>
+
+    <!-- stampa variabile con censura -->
+    <p>
+        <?php  echo $censuredText;
+        echo strlen($censuredText);
+         ?>
     </p>
 </body>
 </html>
